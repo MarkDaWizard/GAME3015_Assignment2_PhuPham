@@ -18,6 +18,7 @@ void Aircraft::Update(float DeltaTime, FrameResource* Frame)
 
 	m_Pos.x += m_MoveSpeed * m_Dir * DeltaTime;
 
+	//Set movement direction depending on position
 	if (m_Pos.x >= startingPos.x + offsetLimit)
 	{
 		m_Pos.x = startingPos.x + offsetLimit;
@@ -30,6 +31,7 @@ void Aircraft::Update(float DeltaTime, FrameResource* Frame)
 		m_Dir = 1.f;
 	}
 
+	//Rotate aircraft depending on movement direction
 	if (m_Dir < 0.f)
 	{
 		m_Rot.z = 10.f;

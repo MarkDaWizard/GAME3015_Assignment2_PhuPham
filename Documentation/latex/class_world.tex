@@ -1,0 +1,239 @@
+\hypertarget{class_world}{}\doxysection{World Class Reference}
+\label{class_world}\index{World@{World}}
+
+
+\mbox{\hyperlink{_world_8h}{World.\+h}} and \mbox{\hyperlink{_world_8cpp}{World.\+cpp}} scripts are where the game scene is built and rendered.  
+
+
+
+
+{\ttfamily \#include $<$World.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}{World}} ()
+\item 
+\mbox{\hyperlink{class_world_a8c73fba541a5817fff65147ba47cd827}{$\sim$\+World}} ()
+\item 
+void \mbox{\hyperlink{class_world_a2d5bcf182425341e277bd34e5f6857da}{build\+World}} (ID3\+D12\+Device $\ast$Device, ID3\+D12\+Graphics\+Command\+List $\ast$Cmd\+List)
+\begin{DoxyCompactList}\small\item\em build\+World creates and sets the start transform of the entities in the game (called at initialiaztion from \mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_world_af49c82edac7dfe4e57618216afa3fe35}{Process\+Input}} ()
+\item 
+void \mbox{\hyperlink{class_world_a2855c23b04b207643d162e3f4d2dd6f8}{Update}} (float Delta\+Time, struct \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$Frame)
+\begin{DoxyCompactList}\small\item\em Call all updates for each entity in the rootnode list and scroll the backgrounf \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_world_a49d6a1ac236041e2d71fdca61adf31e3}{Draw}} (ID3\+D12\+Graphics\+Command\+List $\ast$Cmd\+List, ID3\+D12\+Descriptor\+Heap $\ast$Desc, UINT Desc\+Size, struct \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$Frame, float Delta\+Time)
+\begin{DoxyCompactList}\small\item\em Render all entities in the game scene \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_node}{Scene\+Node}} $\ast$ \mbox{\hyperlink{class_world_a41a3d6173080108bd85c1224d3cca933}{m\+\_\+\+Root\+Node}}
+\begin{DoxyCompactList}\small\item\em Rootnode keeps the entities in the scene, this would be the backgrounds, characters \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_material}{Material}} $>$ $>$ \mbox{\hyperlink{class_world_aa3af5b8b78b28110b3d60541b5744f9f}{m\+Materials}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_scene_node}{Scene\+Node}} $\ast$ $>$ \mbox{\hyperlink{class_world_a23253a80df6ecb711dace56fc3e9ee20}{m\+\_\+\+Render\+List}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_scene_node}{Scene\+Node}} list keeps all entities to be rendered when \mbox{\hyperlink{class_world_a49d6a1ac236041e2d71fdca61adf31e3}{Draw()}} is called. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_geometry}{Mesh\+Geometry}} $\ast$ \mbox{\hyperlink{class_world_a15fda7fc295c3d90c019a2325c853960}{m\+\_\+\+Mesh}}
+\item 
+\mbox{\hyperlink{class_command_queue}{Command\+Queue}} \mbox{\hyperlink{class_world_a84235f7673d37edc3b11dd8f1ee00e08}{m\+\_\+\+Command\+Queue}}
+\item 
+\mbox{\hyperlink{class_terrain}{Terrain}} $\ast$ \mbox{\hyperlink{class_world_aa1f3c9bb59e99cdb195dbe62e209f0e9}{Terrain1}} = new \mbox{\hyperlink{class_terrain}{Terrain}}
+\item 
+\mbox{\hyperlink{class_terrain}{Terrain}} $\ast$ \mbox{\hyperlink{class_world_a7418fe168d342b33451c46d6c14fd01a}{Terrain2}} = new \mbox{\hyperlink{class_terrain}{Terrain}}
+\item 
+\mbox{\hyperlink{class_entity}{Entity}} $\ast$ \mbox{\hyperlink{class_world_a30df3ffd57ab290ba0fe445fda3cba90}{Wingman1}} = new \mbox{\hyperlink{class_player}{Player}}
+\item 
+\mbox{\hyperlink{class_entity}{Entity}} $\ast$ \mbox{\hyperlink{class_world_a340e0b43ca1edc349b4e26c832efd5a3}{Wingman2}} = new \mbox{\hyperlink{class_player}{Player}}
+\item 
+\mbox{\hyperlink{class_aircraft}{Aircraft}} $\ast$ \mbox{\hyperlink{class_world_a2bfa1ac5ccaebcbe572fecdb5976e847}{Enemy1}} = new \mbox{\hyperlink{class_aircraft}{Aircraft}}
+\item 
+\mbox{\hyperlink{class_aircraft}{Aircraft}} $\ast$ \mbox{\hyperlink{class_world_aa3e7181a118ef621072ea10dae879e21}{Enemy2}} = new \mbox{\hyperlink{class_aircraft}{Aircraft}}
+\item 
+\mbox{\hyperlink{class_player}{Player}} $\ast$ \mbox{\hyperlink{class_world_addf54f12f3a1e9c8f120265bafa3474e}{player}} = new \mbox{\hyperlink{class_player}{Player}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{_world_8h}{World.\+h}} and \mbox{\hyperlink{_world_8cpp}{World.\+cpp}} scripts are where the game scene is built and rendered. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}\label{class_world_afa39d4e6f714a7a3691ac0c656f5e8a8}} 
+\index{World@{World}!World@{World}}
+\index{World@{World}!World@{World}}
+\doxysubsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily World\+::\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_world_a8c73fba541a5817fff65147ba47cd827}\label{class_world_a8c73fba541a5817fff65147ba47cd827}} 
+\index{World@{World}!````~World@{$\sim$World}}
+\index{````~World@{$\sim$World}!World@{World}}
+\doxysubsubsection{\texorpdfstring{$\sim$World()}{~World()}}
+{\footnotesize\ttfamily World\+::$\sim$\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_world_a2d5bcf182425341e277bd34e5f6857da}\label{class_world_a2d5bcf182425341e277bd34e5f6857da}} 
+\index{World@{World}!buildWorld@{buildWorld}}
+\index{buildWorld@{buildWorld}!World@{World}}
+\doxysubsubsection{\texorpdfstring{buildWorld()}{buildWorld()}}
+{\footnotesize\ttfamily void World\+::build\+World (\begin{DoxyParamCaption}\item[{ID3\+D12\+Device $\ast$}]{Device,  }\item[{ID3\+D12\+Graphics\+Command\+List $\ast$}]{Cmd\+List }\end{DoxyParamCaption})}
+
+
+
+build\+World creates and sets the start transform of the entities in the game (called at initialiaztion from \mbox{\hyperlink{_game_8cpp}{Game.\+cpp}}). 
+
+Set the game world objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device} & \\
+\hline
+{\em Cmd\+List} & \\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em Device} & \\
+\hline
+{\em Cmd\+List} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_world_a49d6a1ac236041e2d71fdca61adf31e3}\label{class_world_a49d6a1ac236041e2d71fdca61adf31e3}} 
+\index{World@{World}!Draw@{Draw}}
+\index{Draw@{Draw}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void World\+::\+Draw (\begin{DoxyParamCaption}\item[{ID3\+D12\+Graphics\+Command\+List $\ast$}]{Cmd\+List,  }\item[{ID3\+D12\+Descriptor\+Heap $\ast$}]{Desc,  }\item[{UINT}]{Desc\+Size,  }\item[{struct \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$}]{Frame,  }\item[{float}]{Delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Render all entities in the game scene 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cmd\+List} & \\
+\hline
+{\em Desc} & \\
+\hline
+{\em Desc\+Size} & \\
+\hline
+{\em Frame} & \\
+\hline
+{\em Delta\+Time} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_world_af49c82edac7dfe4e57618216afa3fe35}\label{class_world_af49c82edac7dfe4e57618216afa3fe35}} 
+\index{World@{World}!ProcessInput@{ProcessInput}}
+\index{ProcessInput@{ProcessInput}!World@{World}}
+\doxysubsubsection{\texorpdfstring{ProcessInput()}{ProcessInput()}}
+{\footnotesize\ttfamily void World\+::\+Process\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_world_a2855c23b04b207643d162e3f4d2dd6f8}\label{class_world_a2855c23b04b207643d162e3f4d2dd6f8}} 
+\index{World@{World}!Update@{Update}}
+\index{Update@{Update}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void World\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{Delta\+Time,  }\item[{struct \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$}]{Frame }\end{DoxyParamCaption})}
+
+
+
+Call all updates for each entity in the rootnode list and scroll the backgrounf 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delta\+Time} & \\
+\hline
+{\em Frame} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_world_a2bfa1ac5ccaebcbe572fecdb5976e847}\label{class_world_a2bfa1ac5ccaebcbe572fecdb5976e847}} 
+\index{World@{World}!Enemy1@{Enemy1}}
+\index{Enemy1@{Enemy1}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Enemy1}{Enemy1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aircraft}{Aircraft}}$\ast$ World\+::\+Enemy1 = new \mbox{\hyperlink{class_aircraft}{Aircraft}}}
+
+\mbox{\Hypertarget{class_world_aa3e7181a118ef621072ea10dae879e21}\label{class_world_aa3e7181a118ef621072ea10dae879e21}} 
+\index{World@{World}!Enemy2@{Enemy2}}
+\index{Enemy2@{Enemy2}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Enemy2}{Enemy2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_aircraft}{Aircraft}}$\ast$ World\+::\+Enemy2 = new \mbox{\hyperlink{class_aircraft}{Aircraft}}}
+
+\mbox{\Hypertarget{class_world_a84235f7673d37edc3b11dd8f1ee00e08}\label{class_world_a84235f7673d37edc3b11dd8f1ee00e08}} 
+\index{World@{World}!m\_CommandQueue@{m\_CommandQueue}}
+\index{m\_CommandQueue@{m\_CommandQueue}!World@{World}}
+\doxysubsubsection{\texorpdfstring{m\_CommandQueue}{m\_CommandQueue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_command_queue}{Command\+Queue}} World\+::m\+\_\+\+Command\+Queue}
+
+\mbox{\Hypertarget{class_world_a15fda7fc295c3d90c019a2325c853960}\label{class_world_a15fda7fc295c3d90c019a2325c853960}} 
+\index{World@{World}!m\_Mesh@{m\_Mesh}}
+\index{m\_Mesh@{m\_Mesh}!World@{World}}
+\doxysubsubsection{\texorpdfstring{m\_Mesh}{m\_Mesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_mesh_geometry}{Mesh\+Geometry}}$\ast$ World\+::m\+\_\+\+Mesh}
+
+\mbox{\Hypertarget{class_world_a23253a80df6ecb711dace56fc3e9ee20}\label{class_world_a23253a80df6ecb711dace56fc3e9ee20}} 
+\index{World@{World}!m\_RenderList@{m\_RenderList}}
+\index{m\_RenderList@{m\_RenderList}!World@{World}}
+\doxysubsubsection{\texorpdfstring{m\_RenderList}{m\_RenderList}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{class_scene_node}{Scene\+Node}}$\ast$$>$ World\+::m\+\_\+\+Render\+List}
+
+
+
+\mbox{\hyperlink{class_scene_node}{Scene\+Node}} list keeps all entities to be rendered when \mbox{\hyperlink{class_world_a49d6a1ac236041e2d71fdca61adf31e3}{Draw()}} is called. 
+
+\mbox{\Hypertarget{class_world_a41a3d6173080108bd85c1224d3cca933}\label{class_world_a41a3d6173080108bd85c1224d3cca933}} 
+\index{World@{World}!m\_RootNode@{m\_RootNode}}
+\index{m\_RootNode@{m\_RootNode}!World@{World}}
+\doxysubsubsection{\texorpdfstring{m\_RootNode}{m\_RootNode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_node}{Scene\+Node}}$\ast$ World\+::m\+\_\+\+Root\+Node}
+
+
+
+Rootnode keeps the entities in the scene, this would be the backgrounds, characters 
+
+\mbox{\Hypertarget{class_world_aa3af5b8b78b28110b3d60541b5744f9f}\label{class_world_aa3af5b8b78b28110b3d60541b5744f9f}} 
+\index{World@{World}!mMaterials@{mMaterials}}
+\index{mMaterials@{mMaterials}!World@{World}}
+\doxysubsubsection{\texorpdfstring{mMaterials}{mMaterials}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_material}{Material}}$>$ $>$ World\+::m\+Materials}
+
+\mbox{\Hypertarget{class_world_addf54f12f3a1e9c8f120265bafa3474e}\label{class_world_addf54f12f3a1e9c8f120265bafa3474e}} 
+\index{World@{World}!player@{player}}
+\index{player@{player}!World@{World}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_player}{Player}}$\ast$ World\+::player = new \mbox{\hyperlink{class_player}{Player}}}
+
+\mbox{\Hypertarget{class_world_aa1f3c9bb59e99cdb195dbe62e209f0e9}\label{class_world_aa1f3c9bb59e99cdb195dbe62e209f0e9}} 
+\index{World@{World}!Terrain1@{Terrain1}}
+\index{Terrain1@{Terrain1}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Terrain1}{Terrain1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_terrain}{Terrain}}$\ast$ World\+::\+Terrain1 = new \mbox{\hyperlink{class_terrain}{Terrain}}}
+
+\mbox{\Hypertarget{class_world_a7418fe168d342b33451c46d6c14fd01a}\label{class_world_a7418fe168d342b33451c46d6c14fd01a}} 
+\index{World@{World}!Terrain2@{Terrain2}}
+\index{Terrain2@{Terrain2}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Terrain2}{Terrain2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_terrain}{Terrain}}$\ast$ World\+::\+Terrain2 = new \mbox{\hyperlink{class_terrain}{Terrain}}}
+
+\mbox{\Hypertarget{class_world_a30df3ffd57ab290ba0fe445fda3cba90}\label{class_world_a30df3ffd57ab290ba0fe445fda3cba90}} 
+\index{World@{World}!Wingman1@{Wingman1}}
+\index{Wingman1@{Wingman1}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Wingman1}{Wingman1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_entity}{Entity}}$\ast$ World\+::\+Wingman1 = new \mbox{\hyperlink{class_player}{Player}}}
+
+\mbox{\Hypertarget{class_world_a340e0b43ca1edc349b4e26c832efd5a3}\label{class_world_a340e0b43ca1edc349b4e26c832efd5a3}} 
+\index{World@{World}!Wingman2@{Wingman2}}
+\index{Wingman2@{Wingman2}!World@{World}}
+\doxysubsubsection{\texorpdfstring{Wingman2}{Wingman2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_entity}{Entity}}$\ast$ World\+::\+Wingman2 = new \mbox{\hyperlink{class_player}{Player}}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+GAME3015\+\_\+\+Assignment2\+\_\+\+Phu\+Pham/\mbox{\hyperlink{_world_8h}{World.\+h}}\item 
+GAME3015\+\_\+\+Assignment2\+\_\+\+Phu\+Pham/\mbox{\hyperlink{_world_8cpp}{World.\+cpp}}\end{DoxyCompactItemize}

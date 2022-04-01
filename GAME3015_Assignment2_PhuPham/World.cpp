@@ -1,3 +1,9 @@
+//******************************************//
+//	GAME3015_Assignment2_PhuPham			//
+//	Name:Phu Pham							//
+//	ID:101250748							//
+//											//
+//******************************************//
 #include "World.h"
 #include <iostream>
 
@@ -91,7 +97,7 @@ void World::buildWorld(ID3D12Device* Device, ID3D12GraphicsCommandList* CmdList)
 	m_RenderList.push_back(Terrain2);
 
 
-	// PLAYER character
+	// Player
 	player->m_Pos = XMFLOAT3(0.f, 10.f, -10.f);
 	player->m_Scale = XMFLOAT3(10.f, 10.f, 1.f);
 	player->m_Rot = XMFLOAT3(3.14159f / 2.f, 0.f, 0.f);
@@ -101,7 +107,7 @@ void World::buildWorld(ID3D12Device* Device, ID3D12GraphicsCommandList* CmdList)
 	m_RenderList.push_back(player);
 
 
-	// ENEMY1 Character
+	// Enemy1
 	Enemy1->m_Pos = XMFLOAT3(0.f, 10.f, 15.f);
 	Enemy1->m_Scale = XMFLOAT3(8.f, 8.f, 1.f);
 	Enemy1->m_Rot = XMFLOAT3(3.14159f / 1.5f, 0.f, 0.f);
@@ -110,7 +116,7 @@ void World::buildWorld(ID3D12Device* Device, ID3D12GraphicsCommandList* CmdList)
 	m_RootNode->AddChild(Enemy1);
 	m_RenderList.push_back(Enemy1);
 
-	// ENEMY2 Character
+	// Enemy2
 	Enemy2->m_Pos = XMFLOAT3(10.f, 15.f, 28.f);
 	Enemy2->m_Scale = XMFLOAT3(8.f, 8.f, 1.f);
 	Enemy2->m_Rot = XMFLOAT3(3.14159f / 1.5f, 0.f, 0.f);
@@ -119,7 +125,7 @@ void World::buildWorld(ID3D12Device* Device, ID3D12GraphicsCommandList* CmdList)
 	m_RootNode->AddChild(Enemy2);
 	m_RenderList.push_back(Enemy2);
 
-	// WINGMAN1 Character
+	// Wingman1
 	Wingman1->m_Pos = XMFLOAT3(-10.f, 10.f, -15.f);
 	Wingman1->m_Scale = XMFLOAT3(5.f, 5.f, 1.f);
 	Wingman1->m_Rot = XMFLOAT3(3.14159f / 2.f, 0.f, 0.f);
@@ -128,7 +134,7 @@ void World::buildWorld(ID3D12Device* Device, ID3D12GraphicsCommandList* CmdList)
 	player->AddChild(Wingman1);
 	m_RenderList.push_back(Wingman1);
 
-	// WINGMAN2 Character
+	// Wingman2
 	Wingman2->m_Pos = XMFLOAT3(10.f, 10.f, -15.f);
 	Wingman2->m_Scale = XMFLOAT3(5.f, 5.f, 1.f);
 	Wingman2->m_Rot = XMFLOAT3(3.14159f / 2.f, 0.f, 0.f);
@@ -136,6 +142,7 @@ void World::buildWorld(ID3D12Device* Device, ID3D12GraphicsCommandList* CmdList)
 	Wingman2->m_TexIndex = 1;
 	player->AddChild(Wingman2);
 	m_RenderList.push_back(Wingman2);
+
 
 }
 

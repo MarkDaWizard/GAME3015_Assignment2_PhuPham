@@ -1,0 +1,76 @@
+\hypertarget{_game_info_8h}{}\doxysection{GAME3015\+\_\+\+Assignment2\+\_\+\+Phu\+Pham/\+Game\+Info.h File Reference}
+\label{_game_info_8h}\index{GAME3015\_Assignment2\_PhuPham/GameInfo.h@{GAME3015\_Assignment2\_PhuPham/GameInfo.h}}
+{\ttfamily \#include \char`\"{}Common/\+Upload\+Buffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Common/\+Geometry\+Generator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Common/d3d\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Frame\+Resource.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498}{Action}} \{ \newline
+\mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ade59105332f8e296b0b84c3b5da66a95}{Move\+Left}}
+, \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a7dbf4542a2fc0222c56d2bb43aa9d8a4}{Move\+Right}}
+, \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ab8a4e588d73d34d9d2edc06dacf095a1}{Move\+Front}}
+, \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a370d30c0b02ccbf79f7b87d8f8b19f75}{Move\+Back}}
+, \newline
+\mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a1a68377b1e1396c49f254e18bf1f8a1c}{Fire}}
+, \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a0fd430d535aa1902074d95d60a93f744}{Max}}
+ \}
+\begin{DoxyCompactList}\small\item\em Action enums for character game objects \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{_game_info_8h_a7c82b7821d2662eb6e0cfdc08a6c4bd4}{g\+Num\+Frame\+Resources}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_game_info_8h_a8bb1ef53467e4f61410d12822d922498}\label{_game_info_8h_a8bb1ef53467e4f61410d12822d922498}} 
+\index{GameInfo.h@{GameInfo.h}!Action@{Action}}
+\index{Action@{Action}!GameInfo.h@{GameInfo.h}}
+\doxysubsubsection{\texorpdfstring{Action}{Action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498}{Action}}}
+
+
+
+Action enums for character game objects 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveLeft@{MoveLeft}!GameInfo.h@{GameInfo.h}}\index{GameInfo.h@{GameInfo.h}!MoveLeft@{MoveLeft}}}\mbox{\Hypertarget{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ade59105332f8e296b0b84c3b5da66a95}\label{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ade59105332f8e296b0b84c3b5da66a95}} 
+Move\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveRight@{MoveRight}!GameInfo.h@{GameInfo.h}}\index{GameInfo.h@{GameInfo.h}!MoveRight@{MoveRight}}}\mbox{\Hypertarget{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a7dbf4542a2fc0222c56d2bb43aa9d8a4}\label{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a7dbf4542a2fc0222c56d2bb43aa9d8a4}} 
+Move\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveFront@{MoveFront}!GameInfo.h@{GameInfo.h}}\index{GameInfo.h@{GameInfo.h}!MoveFront@{MoveFront}}}\mbox{\Hypertarget{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ab8a4e588d73d34d9d2edc06dacf095a1}\label{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ab8a4e588d73d34d9d2edc06dacf095a1}} 
+Move\+Front&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveBack@{MoveBack}!GameInfo.h@{GameInfo.h}}\index{GameInfo.h@{GameInfo.h}!MoveBack@{MoveBack}}}\mbox{\Hypertarget{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a370d30c0b02ccbf79f7b87d8f8b19f75}\label{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a370d30c0b02ccbf79f7b87d8f8b19f75}} 
+Move\+Back&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fire@{Fire}!GameInfo.h@{GameInfo.h}}\index{GameInfo.h@{GameInfo.h}!Fire@{Fire}}}\mbox{\Hypertarget{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a1a68377b1e1396c49f254e18bf1f8a1c}\label{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a1a68377b1e1396c49f254e18bf1f8a1c}} 
+Fire&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Max@{Max}!GameInfo.h@{GameInfo.h}}\index{GameInfo.h@{GameInfo.h}!Max@{Max}}}\mbox{\Hypertarget{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a0fd430d535aa1902074d95d60a93f744}\label{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a0fd430d535aa1902074d95d60a93f744}} 
+Max&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{_game_info_8h_a7c82b7821d2662eb6e0cfdc08a6c4bd4}\label{_game_info_8h_a7c82b7821d2662eb6e0cfdc08a6c4bd4}} 
+\index{GameInfo.h@{GameInfo.h}!gNumFrameResources@{gNumFrameResources}}
+\index{gNumFrameResources@{gNumFrameResources}!GameInfo.h@{GameInfo.h}}
+\doxysubsubsection{\texorpdfstring{gNumFrameResources}{gNumFrameResources}}
+{\footnotesize\ttfamily const int g\+Num\+Frame\+Resources = 3}
+

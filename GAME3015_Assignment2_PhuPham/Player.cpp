@@ -17,6 +17,8 @@ Player::Player()
 	m_Key[Action::MoveBack] = 'S';
 	m_Key[Action::MoveLeft] = 'A';
 	m_Key[Action::MoveRight] = 'D';
+
+	
 }
 
 Player::~Player()

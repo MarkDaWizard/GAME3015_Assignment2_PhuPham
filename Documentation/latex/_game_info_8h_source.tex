@@ -1,0 +1,31 @@
+\hypertarget{_game_info_8h_source}{}\doxysection{Game\+Info.\+h}
+\label{_game_info_8h_source}\index{GAME3015\_Assignment2\_PhuPham/GameInfo.h@{GAME3015\_Assignment2\_PhuPham/GameInfo.h}}
+\mbox{\hyperlink{_game_info_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_upload_buffer_8h}{Common/UploadBuffer.h}}"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_geometry_generator_8h}{Common/GeometryGenerator.h}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{d3d_app_8h}{Common/d3dApp.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_frame_resource_8h}{FrameResource.h}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{using} Microsoft::WRL::ComPtr;}
+\DoxyCodeLine{13 \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{_game_info_8h_a7c82b7821d2662eb6e0cfdc08a6c4bd4}{gNumFrameResources}} = 3;}
+\DoxyCodeLine{14 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespace_direct_x}{DirectX}};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19 \textcolor{keyword}{enum} \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498}{Action}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ade59105332f8e296b0b84c3b5da66a95}{MoveLeft}},}
+\DoxyCodeLine{22     \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a7dbf4542a2fc0222c56d2bb43aa9d8a4}{MoveRight}},}
+\DoxyCodeLine{23     \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498ab8a4e588d73d34d9d2edc06dacf095a1}{MoveFront}},}
+\DoxyCodeLine{24     \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a370d30c0b02ccbf79f7b87d8f8b19f75}{MoveBack}},}
+\DoxyCodeLine{25     \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a1a68377b1e1396c49f254e18bf1f8a1c}{Fire}},}
+\DoxyCodeLine{26     \mbox{\hyperlink{_game_info_8h_a8bb1ef53467e4f61410d12822d922498a0fd430d535aa1902074d95d60a93f744}{Max}}}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+
+\end{DoxyCode}

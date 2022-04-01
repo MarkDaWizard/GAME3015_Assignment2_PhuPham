@@ -2,12 +2,12 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Asus GM501\Desktop\New folder (2)\GAME3015_Assignment2_PhuPham\x64\Debug\GAME3015_Assignment2_PhuPham.exe</FullPath>
+      <FullPath>D:\T163 - Game Programming\Engine Dev 2\GAME3015-A2-PhuPham\x64\Debug\GAME3015_Assignment2_PhuPham.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
-      <FullPath>C:\Users\Asus GM501\Desktop\New folder (2)\GAME3015_Assignment2_PhuPham\x64\Debug\Default.cso</FullPath>
+      <FullPath>D:\T163 - Game Programming\Engine Dev 2\GAME3015-A2-PhuPham\x64\Debug\Default.cso</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

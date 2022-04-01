@@ -1,9 +1,15 @@
+//******************************************//
+//	GAME3015_Assignment2_PhuPham			//
+//	Name:Phu Pham							//
+//	ID:101250748							//
+//											//
+//******************************************//
 #pragma once
 
 #include "Entity.h"
-#include "ScrollingGround.h"
+#include "Terrain.h"
 #include "Player.h"
-#include "AirCraft.h"
+#include "Aircraft.h"
 
 /// <summary>
 /// World.h and World.cpp scripts are where the game scene is built and rendered.
@@ -32,8 +38,8 @@ public:
 	CommandQueue	m_CommandQueue;
 
 	//Terrain 
-	ScrollingGround* Terrain1 = new ScrollingGround;
-	ScrollingGround* Terrain2 = new ScrollingGround;
+	Terrain* Terrain1 = new Terrain;
+	Terrain* Terrain2 = new Terrain;
 	//Wingman
 	Entity* Wingman1 = new Player;
 	Entity* Wingman2 = new Player;

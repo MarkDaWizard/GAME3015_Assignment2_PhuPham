@@ -1,10 +1,14 @@
 /**
-@mainpage Game Engine Development II Assignment 2
+@mainpage Game Engine Development II Assignment 2 Phu Pham
 
-@author Jeongyeon Jane Hong and Pauleen Lam
+@author Phu Pham
 
 @attention 
 
-@note Player Movement: Use D-Pad Keys
+	Game Engine Development 2 Assignment 2
+	Implemented inputs for player movement
+	Fixed enemy clipping bug
+
+@note Controls: WASD for player movement
 
 **/
