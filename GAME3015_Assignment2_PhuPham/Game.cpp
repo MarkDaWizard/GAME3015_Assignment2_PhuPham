@@ -145,13 +145,7 @@ void Game::Draw(const GameTimer& gt)
 	mCommandList->SetPipelineState(m_PSOs["alphaTested"].Get());
 	world->Draw(mCommandList.Get(), m_SrvDescriptorHeap.Get(), m_CbvSrvDescriptorSize, 
 		m_CurrFrameResource, gt.DeltaTime());
-	/*DrawRenderItems(mCommandList.Get(), world->mRitemLayer[(int)RenderLayer::Opaque]);
 
-	mCommandList->SetPipelineState(m_PSOs["alphaTested"].Get());
-	DrawRenderItems(mCommandList.Get(), world->mRitemLayer[(int)RenderLayer::AlphaTested]);
-
-	mCommandList->SetPipelineState(m_PSOs["transparent"].Get());
-	DrawRenderItems(mCommandList.Get(), world->mRitemLayer[(int)RenderLayer::Transparent]);*/
 
 	// Indicate a state transition on the resource usage.
 	mCommandList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(CurrentBackBuffer(),
@@ -219,26 +213,7 @@ void Game::UpdateCamera(const GameTimer& gt)
 
 void Game::UpdateObjectCBs(const GameTimer& gt)
 {
-	//auto currObjectCB = m_CurrFrameResource->ObjectCB.get();
-	//for (auto& e : world->mAllRitems)
-	//{
-	//	// Only update the cbuffer data if the constants have changed.  
-	//	// This needs to be tracked per frame resource.
-	//	if (e->NumFramesDirty > 0)
-	//	{
-	//		XMXMFLOAT4X4 world = XMLoadFloat4x4(&e->World);
-	//		XMXMFLOAT4X4 texTransform = XMLoadFloat4x4(&e->TexTransform);
 
-	//		ObjectConstants objConstants;
-	//		XMStoreFloat4x4(&objConstants.World, XMXMFLOAT4X4Transpose(world));
-	//		XMStoreFloat4x4(&objConstants.TexTransform, XMXMFLOAT4X4Transpose(texTransform));
-
-	//		currObjectCB->CopyData(e->ObjCBIndex, objConstants);
-
-	//		// Next FrameResource need to be updated too.
-	//		e->NumFramesDirty--;
-	//	}
-	//}
 }
 
 void Game::UpdateMaterialCBs(const GameTimer& gt)
@@ -288,18 +263,6 @@ void Game::UpdateMainPassCB(const GameTimer& gt)
 	m_MainPassCB.TotalTime = gt.TotalTime();
 	m_MainPassCB.DeltaTime = gt.DeltaTime();
 	m_MainPassCB.AmbientLight = { 1.1f, 1.1f, 1.1f, 1.0f };
-
-	//m_MainPassCB.Lights[0].Direction = { 0, -1.0f, 0 };
-	//m_MainPassCB.Lights[0].Strength = { 0.5f, 0.5f, 0.1f };
-
-	//m_MainPassCB.Lights[1].Position = { 0.0f, 10.0f, 0.0f };
-	//m_MainPassCB.Lights[1].Strength = { 5.0f, 1.0f, 1.0f };
-
-	//m_MainPassCB.Lights[2].Position = { 4.0f, 5.0f, 3.0f };
-	//m_MainPassCB.Lights[2].Strength = { 2.0f, 0.0f, 2.0f };
-
-	//m_MainPassCB.Lights[3].Position = { -5.0f, 7.0f, 3.0f };
-	//m_MainPassCB.Lights[3].Strength = { 0.0f, 2.0f, 4.0f };
 
 	auto currPassCB = m_CurrFrameResource->PassCB.get();
 	currPassCB->CopyData(0, m_MainPassCB);
@@ -389,34 +352,24 @@ void Game::BuildDescriptorHeaps()
 	srvDesc.Format = LandTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(LandTex.Get(), &srvDesc, hDescriptor);
 
-	// next descriptor
+	// Enemy descriptor
 	auto JetTex = m_Textures["JetTex"]->Resource;
 	hDescriptor.Offset(1, m_CbvSrvDescriptorSize);
 	srvDesc.Format = JetTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(JetTex.Get(), &srvDesc, hDescriptor);
 
-	// next descriptor
+	// Player descriptor
 	auto Jet2Tex = m_Textures["Jet2Tex"]->Resource;
 	hDescriptor.Offset(1, m_CbvSrvDescriptorSize);
 	srvDesc.Format = Jet2Tex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(Jet2Tex.Get(), &srvDesc, hDescriptor);
 
-	// next descriptor
+	// Terrain descriptor
 	auto GrassTex = m_Textures["GrassTex"]->Resource;
 	hDescriptor.Offset(1, m_CbvSrvDescriptorSize);
 	srvDesc.Format = GrassTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(GrassTex.Get(), &srvDesc, hDescriptor);
 
-	// MAT2
-	//int count = 0;
-	//for (auto t = m_Textures.begin(); t != m_Textures.end(); ++t)
-	//{
-	//	auto Tex = t->second->Resource;
-	//	if (count != 0) { hDescriptor.Offset(1, m_CbvSrvDescriptorSize); }
-	//	srvDesc.Format = Tex->GetDesc().Format;
-	//	md3dDevice->CreateShaderResourceView(Tex.Get(), &srvDesc, hDescriptor);
-	//	count++;
-	//}
 
 }
 
@@ -548,27 +501,11 @@ void Game::BuildPSOs()
 
 void Game::BuildFrameResources()
 {
-	/*for (int i = 0; i < gNumFrameResources; ++i)
-	{
-		m_FrameResources.push_back(std::make_unique<FrameResource>(md3dDevice.Get(),
-			1, (UINT)world->mAllRitems.size(), (UINT)world->mMaterials.size()));
-	}*/
+
 }
 
 void Game::BuildMaterials()
 {
-	// MAT3
-	//int count = 0;
-	//for (auto t = m_Textures.begin(); t != m_Textures.end(); ++t)
-	//{
-	//	auto Mat = std::make_unique<Material>();
-	//	Mat->Name = t->first;
-	//	Mat->MatCBIndex = count;
-	//	Mat->DiffuseSrvHeapIndex = count;
-	//	Mat->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
-	//	mMaterials[t->first] = std::move(Mat);
-	//	count++;
-	//}
 
 	auto LandMat = std::make_unique<Material>();
 	LandMat->Name = "LandMat";
@@ -598,40 +535,6 @@ void Game::BuildMaterials()
 	GrassMat->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 	world->mMaterials["GrassMat"] = std::move(GrassMat);
 }
-//
-//void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector<RenderItem*>& ritems)
-//{
-//	UINT objCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(ObjectConstants));
-//	UINT matCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(MaterialConstants));
-//
-//	auto objectCB = m_CurrFrameResource->ObjectCB->Resource();
-//	auto matCB = m_CurrFrameResource->MaterialCB->Resource();
-//
-//	// For each render item...
-//	for (size_t i = 0; i < ritems.size(); ++i)
-//	{
-//		auto ri = ritems[i];
-//
-//		cmdList->IASetVertexBuffers(0, 1, &ri->Geo->VertexBufferView());
-//		cmdList->IASetIndexBuffer(&ri->Geo->IndexBufferView());
-//		cmdList->IASetPrimitiveTopology(ri->PrimitiveType);
-//
-//		CD3DX12_GPU_DESCRIPTOR_HANDLE tex(
-//			m_SrvDescriptorHeap->GetGPUDescriptorHandleForHeapStart()
-//			);
-//
-//		tex.Offset(ri->Mat->DiffuseSrvHeapIndex, m_CbvSrvDescriptorSize);
-//
-//		D3D12_GPU_VIRTUAL_ADDRESS objCBAddress = objectCB->GetGPUVirtualAddress() + ri->ObjCBIndex * objCBByteSize;
-//		D3D12_GPU_VIRTUAL_ADDRESS matCBAddress = matCB->GetGPUVirtualAddress() + ri->Mat->MatCBIndex * matCBByteSize;
-//
-//		cmdList->SetGraphicsRootDescriptorTable(0, tex);
-//		cmdList->SetGraphicsRootConstantBufferView(1, objCBAddress);
-//		cmdList->SetGraphicsRootConstantBufferView(3, matCBAddress);
-//
-//		cmdList->DrawIndexedInstanced(ri->IndexCount, 1, ri->StartIndexLocation, ri->BaseVertexLocation, 0);
-//	}
-//}
 
 std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 {
@@ -720,6 +623,5 @@ void Game::BuildShapeGeometry()
 void Game::BuildShapeRenderItems()
 {
 	world->buildWorld(md3dDevice.Get(), mCommandList.Get());
-
 
 }
