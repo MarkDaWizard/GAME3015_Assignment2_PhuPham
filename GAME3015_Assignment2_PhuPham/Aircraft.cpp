@@ -1,5 +1,6 @@
 #include "Aircraft.h"
 
+
 Aircraft::Aircraft()
 {
 	m_velocity = XMFLOAT3(20.f,0.f,0.f);
@@ -54,3 +55,5 @@ void Aircraft::Draw(ID3D12GraphicsCommandList* CmdList, ID3D12DescriptorHeap* De
 {
 	Entity::Draw(CmdList, Desc, DescSize, Frame, Mesh, DeltaTime);
 }
+
+
